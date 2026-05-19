@@ -660,59 +660,86 @@
   </div>
 
   <!-- Stage 1: Read & Analyse (combined) -->
-  <div class="stage" id="stage-1">
-    <div class="card">
-      <div class="card-title">Read & Analyse</div>
-      <div class="card-sub">Read the policy on the left, then write your analysis on the right. You can refer back to the policy at any time.</div>
+<div class="stage" id="stage-1">
+  <div class="card">
+    <div class="card-title">Read & Analyse</div>
+    <div class="card-sub">Read the policy on the left, then write your analysis on the right. You can refer back to the policy at any time.</div>
 
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;align-items:start;margin-bottom:1rem;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;align-items:start;margin-bottom:1rem;">
 
-        <!-- Left: Policy -->
-        <div>
-          <div class="compare-col-label label-original" style="margin-bottom:8px;">Policy</div>
-          <div style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:0.85rem 1rem;margin-bottom:0.75rem;font-size:12.5px;color:var(--text2);line-height:1.65;">
-            <strong style="color:var(--text);display:block;margin-bottom:3px;">Policy Background</strong>
-            The following policy clauses are taken directly from the Yonsei University Guidelines for Students on the Use of Generative AI, used in this study to explore how students interpret AI-related academic policies.
+      <!-- Left: Policy -->
+      <div>
+        <div class="compare-col-label label-original" style="margin-bottom:8px;">Policy</div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:0.85rem 1rem;margin-bottom:0.75rem;font-size:12.5px;color:var(--text2);line-height:1.65;">
+          <strong style="color:var(--text);display:block;margin-bottom:3px;">Policy Background</strong>
+          The following policy clauses are taken directly from the Yonsei University Guidelines for Students on the Use of Generative AI, used in this study to explore how students interpret AI-related academic policies.
+        </div>
+        <div class="policy-block" style="margin-bottom:0;">
+          <h3>Yonsei University — Guidelines for Students on the Use of Generative AI</h3>
+          <p><strong>Clause 2. Verify accuracy and reliability of AI outputs.</strong> Due to its inherent nature, generative AI may produce false or misleading information. It is essential to critically verify and fact-check its outputs.</p>
+          <p>● Understand the limitations and potential drawbacks of generative AI, and evaluate its outputs with a critical and questioning mindset.</p>
+          <p>● Always keep your learning objectives in mind. Emphasise self-directed learning and inquiry, and be mindful not to become overly dependent on AI tools.</p>
+          <p><strong>Clause 3. Act ethically and remain aware of potential biases in AI outputs.</strong> Although generative AI is designed to reject unethical prompts, indirect or rephrased questions may still lead to the generation of inappropriate or unethical content. Users should exercise caution, discretion, and a strong sense of responsibility.</p>
+          <p>● When AI is trained on biased or discriminatory data, it may produce skewed or harmful outputs that could inadvertently influence your academic work or research outcomes. Always remain vigilant and evaluate AI-generated content with critical scrutiny.</p>
+          <p><strong>Clause 5. Always provide proper citation when using generative AI tools.</strong> If students use generative AI in their academic work, they must provide clear and accurate citations. Submitting AI-generated content without proper attribution or using it without modification may be considered plagiarism or academic misconduct.</p>
+          <p>● Provide clear citations including the specific model used, the prompt entered, and the name of the platform.</p>
+          <p><em>Example (APA):</em> OpenAI. (Year). ChatGPT (Month Day version) [Large language model]. https://chat.openai.com</p>
+          <p><em>Example (MLA):</em> "Exact prompt you used" prompt. ChatGPT, Day Month version, OpenAI, Day Month Year, chat.openai.com.</p>
+        </div>
+      </div>
+
+      <!-- Right: Analysis + AI Assistant -->
+      <div>
+        <div class="compare-col-label label-revised" style="margin-bottom:8px;">Your Analysis</div>
+        <div class="prompt-guide">
+          <h4>Address these 5 dimensions:</h4>
+          <ol>
+            <li><strong>Behavioral Impact</strong> — How might this policy change how students work?</li>
+            <li><strong>Decision-Making</strong> — How does it affect decisions about using AI?</li>
+            <li><strong>Well-being</strong> — What emotional or psychological effects might it have?</li>
+            <li><strong>Benefits</strong> — What are the genuine benefits for students?</li>
+            <li><strong>Potential Drawbacks</strong> — What are realistic concerns or limitations?</li>
+          </ol>
+        </div>
+
+        <textarea id="originalAnalysis" placeholder="Write your analysis here. Consider all 5 dimensions above..." oninput="updateWC('originalAnalysis','wc1')" style="min-height:260px;"></textarea>
+        <div class="wc" id="wc1">0 words</div>
+
+        <!-- AI Chatbot Panel -->
+        <div class="chat-box" style="margin-top:1rem;">
+          <div style="padding:0.85rem 1rem;border-bottom:1px solid var(--border);background:var(--surface2);">
+            <div style="font-size:13px;font-weight:600;color:var(--text);">AI Writing Assistant</div>
+            <div style="font-size:12px;color:var(--text2);line-height:1.5;">Ask questions while writing, but use your own judgment in the final analysis.</div>
           </div>
-          <div class="policy-block" style="margin-bottom:0;">
-            <h3>Yonsei University — Guidelines for Students on the Use of Generative AI</h3>
-            <p><strong>Clause 2. Verify accuracy and reliability of AI outputs.</strong> Due to its inherent nature, generative AI may produce false or misleading information. It is essential to critically verify and fact-check its outputs.</p>
-            <p>● Understand the limitations and potential drawbacks of generative AI, and evaluate its outputs with a critical and questioning mindset.</p>
-            <p>● Always keep your learning objectives in mind. Emphasise self-directed learning and inquiry, and be mindful not to become overly dependent on AI tools.</p>
-            <p><strong>Clause 3. Act ethically and remain aware of potential biases in AI outputs.</strong> Although generative AI is designed to reject unethical prompts, indirect or rephrased questions may still lead to the generation of inappropriate or unethical content. Users should exercise caution, discretion, and a strong sense of responsibility.</p>
-            <p>● When AI is trained on biased or discriminatory data, it may produce skewed or harmful outputs that could inadvertently influence your academic work or research outcomes. Always remain vigilant and evaluate AI-generated content with critical scrutiny.</p>
-            <p><strong>Clause 5. Always provide proper citation when using generative AI tools.</strong> If students use generative AI in their academic work, they must provide clear and accurate citations. Submitting AI-generated content without proper attribution or using it without modification may be considered plagiarism or academic misconduct.</p>
-            <p>● Provide clear citations including the specific model used, the prompt entered, and the name of the platform.</p>
-            <p><em>Example (APA):</em> OpenAI. (Year). ChatGPT (Month Day version) [Large language model]. https://chat.openai.com</p>
-            <p><em>Example (MLA):</em> "Exact prompt you used" prompt. ChatGPT, Day Month version, OpenAI, Day Month Year, chat.openai.com.</p>
+
+          <div class="chat-messages" id="stage1ChatMessages" style="max-height:260px;">
+            <div class="msg ai">
+              <div class="msg-avatar">AI</div>
+              <div class="msg-bubble">Hi! I can help you understand the policy or think through the 5 analysis dimensions. I will guide you, not write the whole answer for you.</div>
+            </div>
+          </div>
+
+          <div class="chat-input-area">
+            <textarea class="chat-input" id="stage1ChatInput" placeholder="Ask about the policy or your analysis..." rows="1" onkeydown="handleStage1ChatKey(event)"></textarea>
+            <button class="chat-send" id="stage1ChatSendBtn" onclick="sendStage1Chat()">Send</button>
           </div>
         </div>
 
-        <!-- Right: Analysis -->
-        <div>
-          <div class="compare-col-label label-revised" style="margin-bottom:8px;">Your Analysis</div>
-          <div class="prompt-guide">
-            <h4>Address these 5 dimensions:</h4>
-            <ol>
-              <li><strong>Behavioral Impact</strong> — How might this policy change how students work?</li>
-              <li><strong>Decision-Making</strong> — How does it affect decisions about using AI?</li>
-              <li><strong>Well-being</strong> — What emotional or psychological effects might it have?</li>
-              <li><strong>Benefits</strong> — What are the genuine benefits for students?</li>
-              <li><strong>Potential Drawbacks</strong> — What are realistic concerns or limitations?</li>
-            </ol>
-          </div>
-          <textarea id="originalAnalysis" placeholder="Write your analysis here. Consider all 5 dimensions above..." oninput="updateWC('originalAnalysis','wc1')" style="min-height:260px;"></textarea>
-          <div class="wc" id="wc1">0 words</div>
+        <div class="feedback-tags" style="margin-top:0.75rem;">
+          <button class="ftag" onclick="stage1QuickAsk('Can you explain Clause 2 in simple words?')">Explain Clause 2</button>
+          <button class="ftag" onclick="stage1QuickAsk('What does the well-being dimension mean here?')">Well-being help</button>
+          <button class="ftag" onclick="stage1QuickAsk('What are possible drawbacks of this policy?')">Drawbacks ideas</button>
         </div>
-
       </div>
 
-      <div class="btn-row">
-        <button class="btn btn-secondary" onclick="goToStage(0)">← Back</button>
-        <button class="btn btn-primary" id="submitAnalysisBtn" onclick="submitAnalysis()" disabled>Submit for AI Feedback →</button>
-      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn btn-secondary" onclick="goToStage(0)">← Back</button>
+      <button class="btn btn-primary" id="submitAnalysisBtn" onclick="submitAnalysis()" disabled>Submit for AI Feedback →</button>
     </div>
   </div>
+</div>
 
   <!-- Stage 2: AI Feedback Chat -->
   <div class="stage" id="stage-2">
@@ -1030,6 +1057,104 @@ function applySuggestion(index, btn) {
   btn.textContent = '✓ Added';
   btn.disabled = true;
   document.getElementById('sc-' + index).classList.add('applied');
+}
+
+let stage1ChatHistory = [];
+let stage1IsTyping = false;
+
+function addStage1Message(role, content) {
+  const msgs = document.getElementById('stage1ChatMessages');
+  const div = document.createElement('div');
+  div.className = 'msg ' + (role === 'user' ? 'user' : 'ai');
+
+  const avatar = document.createElement('div');
+  avatar.className = 'msg-avatar';
+  avatar.textContent = role === 'user' ? 'You' : 'AI';
+
+  const bubble = document.createElement('div');
+  bubble.className = 'msg-bubble';
+  bubble.textContent = content;
+
+  div.appendChild(avatar);
+  div.appendChild(bubble);
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+async function sendStage1Chat() {
+  const input = document.getElementById('stage1ChatInput');
+  const msg = input.value.trim();
+
+  if (!msg || stage1IsTyping) return;
+
+  input.value = '';
+  addStage1Message('user', msg);
+
+  stage1ChatHistory.push({
+    role: 'user',
+    content: msg
+  });
+
+  stage1IsTyping = true;
+  document.getElementById('stage1ChatSendBtn').disabled = true;
+
+  try {
+    const currentAnalysis = document.getElementById('originalAnalysis').value.trim();
+
+    const response = await fetch('/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        system: `You are an AI writing assistant inside a university policy analysis study.
+
+The student is reading the Yonsei University Guidelines for Students on the Use of Generative AI.
+
+Your job:
+- Help the student understand the policy.
+- Explain the 5 analysis dimensions clearly.
+- Give hints, questions, and examples.
+- Do not write the full analysis for the student.
+- Keep responses short, supportive, and useful.
+- If the student asks for a complete answer, guide them instead.
+
+Current student draft:
+${currentAnalysis || 'The student has not written anything yet.'}`,
+        messages: stage1ChatHistory,
+        max_tokens: 500
+      })
+    });
+
+    const data = await response.json();
+
+    const reply = data.content?.map(b => b.text || '').join('')
+      || 'Sorry, I could not generate a response right now.';
+
+    stage1ChatHistory.push({
+      role: 'assistant',
+      content: reply
+    });
+
+    addStage1Message('ai', reply);
+
+  } catch (err) {
+    addStage1Message('ai', 'There was an error connecting to the AI assistant. Please try again.');
+  }
+
+  stage1IsTyping = false;
+  document.getElementById('stage1ChatSendBtn').disabled = false;
+}
+
+function stage1QuickAsk(q) {
+  if (stage1IsTyping) return;
+  document.getElementById('stage1ChatInput').value = q;
+  sendStage1Chat();
+}
+
+function handleStage1ChatKey(e) {
+  if (e.key === 'Enter' && !e.shiftKey) {
+    e.preventDefault();
+    sendStage1Chat();
+  }
 }
 
 async function submitFinal() {
